@@ -1,0 +1,20 @@
+def Josh(person, k, index):
+    if len(person) == 1:
+        print(person[0])
+        return
+    
+    index = ((index+k)%len(person))
+    print("Count:" ,len(person))
+    print("index :",index)
+    person.pop(index)
+    print(person)
+    
+    Josh(person,k,index)
+
+
+n = int(input("No of Person: "))
+k = int(input("Skip value: "))
+k-=1
+index = 0
+person=list(range(1,n+1))
+Josh(person,k,index) 
